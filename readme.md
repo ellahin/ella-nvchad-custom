@@ -10,3 +10,6 @@ npm install -g typescript typescript-language-server
 ```
 rustup component add rust-analyzer
 ```
+```
+npm i -g sql-language-server
+```
