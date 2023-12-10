@@ -19,3 +19,5 @@ lspconfig.rust_analyzer.setup({
 
 lspconfig.tsserver.setup {}
 lspconfig.html.setup{}
+lspconfig.clangd.setup{}
+lspconfig.pyright.setup{}
