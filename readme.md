@@ -16,3 +16,6 @@ Install pyright
 ```
 npm i -g sql-language-server
 ```
+```
+go install github.com/arduino/arduino-language-server@latest
+```

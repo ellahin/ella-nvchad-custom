@@ -22,3 +22,4 @@ lspconfig.html.setup{}
 lspconfig.clangd.setup{}
 lspconfig.pyright.setup{}
 lspconfig.sqlls.setup{}
+require'lspconfig'.arduino_language_server.setup{}
