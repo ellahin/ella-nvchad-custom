@@ -12,7 +12,14 @@ require'lspconfig'.rust_analyzer.setup{
         allFeatures = true
       }
     }
-  }
+  },
+  on_attach = function(client, bufnr)
+    client.server_capabilities.semanticTokensProvider = nil
+    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  end
 }
 lspconfig.tsserver.setup {}
 lspconfig.html.setup{}
