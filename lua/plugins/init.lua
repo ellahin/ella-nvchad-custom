@@ -9,7 +9,10 @@ return {
   {
     "nvim-tree/nvim-tree.lua",
     opts = {
-      git = { enable = true },
+      git = { enable = false},
+      filters = {
+        dotfiles = false
+      }
     },
   },
   {
