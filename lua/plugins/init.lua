@@ -35,5 +35,9 @@ return {
     init = function ()
       vim.g.rustfmt_autosave = 1
     end,
-  }
+  },
+   {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+    }
 }
