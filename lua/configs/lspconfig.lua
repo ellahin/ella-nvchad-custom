@@ -11,7 +11,15 @@ require'lspconfig'.rust_analyzer.setup{
       },
       cargo = {
         allFeatures = true
-      }
+      },
+      procMacro = {
+        ignored = {
+            leptos_macro = {
+                "component",
+                "server",
+            },
+        },
+      },
     },
     workspaceFolders = true,
   },
@@ -24,8 +32,18 @@ require'lspconfig'.rust_analyzer.setup{
   end,
 }
 lspconfig.tsserver.setup {}
-lspconfig.html.setup{}
-lspconfig.clangd.setup{}
+lspconfig.html.setup {
+  init_options = {
+  configurationSection = { "html", "css", "javascript" },
+  embeddedLanguages = {
+    css = true,
+    javascript = true
+  },
+  provideFormatter = true
+}
+}
+lspconfig.clangd.setup{
+}
 lspconfig.pyright.setup{}
 lspconfig.sqlls.setup{}
 require'lspconfig'.arduino_language_server.setup{}
