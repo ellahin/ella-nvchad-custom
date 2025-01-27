@@ -57,7 +57,6 @@ require'lspconfig'.rust_analyzer.setup{
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
   end,
 }
-lspconfig.tsserver.setup {}
 lspconfig.html.setup {
   init_options = {
   configurationSection = { "html", "css", "javascript" },
@@ -80,4 +79,18 @@ lspconfig.sqlls.setup{}
 require'lspconfig'.arduino_language_server.setup{}
 require'lspconfig'.golangci_lint_ls.setup{}
 
+lspconfig.ts_ls.setup {
+  init_options = {
+    plugins = {
+      {
+        name = '@vue/typescript-plugin',
+        location = "/usr/lib/node_modules/@vue/typescript-plugin",
+	languages = {"javascript", "typescript", "vue"},
+      },
+    },
+  },
+  filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+}
+
+lspconfig.volar.setup {}
 return M

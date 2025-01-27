@@ -23,3 +23,9 @@ go install github.com/arduino/arduino-language-server@latest
 go install github.com/nametake/golangci-lint-langserver@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 ```
+```
+npm i -g @vue/typescript-plugin
+```
+```
+npm install -g @vue/language-server
+```
