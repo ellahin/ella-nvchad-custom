@@ -40,4 +40,5 @@ end)
 
 
 vim.wo.relativenumber = true
+vim.opt.number = true
 vim.opt.clipboard = "unnamedplus"

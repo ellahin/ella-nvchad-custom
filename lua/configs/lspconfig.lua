@@ -70,7 +70,17 @@ lspconfig.html.setup {
 lspconfig.clangd.setup{
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
+    if client.supports_method('textDocument/formatting') then
+                vim.api.nvim_create_autocmd('BufWritePre', {
+                    group = vim.api.nvim_create_augroup('LspFormatting', {}),
+                    buffer = bufnr,
+                    callback = function()
+                        vim.lsp.buf.format({ bufnr = bufnr })
+                    end,
+                })
+            end
     M.on_attach(client, bufnr)
+    
   end,
 
 }
